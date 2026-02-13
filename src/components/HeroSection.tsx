@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Package, Globe, Clock } from "lucide-react";
+import { ArrowRight, Truck, MapPin, Clock } from "lucide-react";
 import heroImage from "@/assets/hero-logistics.jpg";
 
 const HeroSection = () => {
@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Container ship at port" className="w-full h-full object-cover" />
+        <img src={heroImage} alt="Freight truck on highway" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/40" />
       </div>
 
@@ -28,7 +28,7 @@ const HeroSection = () => {
           >
             <div className="orange-dot" />
             <span className="text-primary font-semibold text-sm uppercase tracking-widest">
-              Global Logistics Leader
+              Fahad Freight Logistics
             </span>
           </motion.div>
 
@@ -38,9 +38,9 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-secondary-foreground leading-[1.1] mb-6"
           >
-            Moving the World,{" "}
-            <span className="text-gradient-orange">One Container</span>{" "}
-            at a Time
+            City to City,{" "}
+            <span className="text-gradient-orange">Freight That Delivers</span>{" "}
+            On Time
           </motion.h1>
 
           <motion.p
@@ -49,7 +49,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-lg text-secondary-foreground/60 max-w-xl mb-10 leading-relaxed"
           >
-            End-to-end freight solutions across 120+ countries. We don't just ship goods — we engineer supply chains that drive your business forward.
+            Reliable truck freight delivery across 50+ cities. We move your cargo safely from one city to another — fast, secure, and always on schedule.
           </motion.p>
 
           <motion.div
@@ -80,8 +80,8 @@ const HeroSection = () => {
             className="grid grid-cols-3 gap-6 max-w-lg"
           >
             {[
-              { icon: Globe, value: "120+", label: "Countries" },
-              { icon: Package, value: "50K+", label: "Shipments/yr" },
+              { icon: MapPin, value: "50+", label: "Cities" },
+              { icon: Truck, value: "10K+", label: "Deliveries/yr" },
               { icon: Clock, value: "99.2%", label: "On-time" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">

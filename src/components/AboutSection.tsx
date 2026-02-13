@@ -30,10 +30,10 @@ const AboutSection = () => {
               <span className="text-gradient-orange">Driven by Excellence</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Founded in 2005, SwiftHaul has grown from a regional freight carrier into a global logistics powerhouse. We combine cutting-edge technology with deep industry expertise to deliver seamless supply chain solutions for businesses of all sizes.
+              Founded by Fahad with a vision to revolutionize city-to-city freight, Fahad Freight Logistics has grown into a trusted name in truck transportation. We specialize in moving cargo between cities with speed, safety, and reliability.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Our commitment to reliability, transparency, and innovation has earned us the trust of over 5,000 clients worldwide. From ocean freight to last-mile delivery, we handle every link in the chain.
+              Our fleet of modern trucks and dedicated drivers ensure your goods reach their destination on time, every time. From full truckloads to partial shipments, we handle it all with care.
             </p>
 
             <div className="grid grid-cols-3 gap-4">
@@ -62,7 +62,7 @@ const AboutSection = () => {
               <div className="relative bg-card rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={founderImage}
-                  alt="James Mitchell - Founder & CEO"
+                  alt="Fahad - Founder & CEO"
                   className="w-full h-80 object-cover object-top"
                 />
                 <div className="p-6 relative">
@@ -71,9 +71,9 @@ const AboutSection = () => {
                       Founder & CEO
                     </div>
                   </div>
-                  <h3 className="text-2xl font-heading font-bold text-card-foreground mt-2">James Mitchell</h3>
+                  <h3 className="text-2xl font-heading font-bold text-card-foreground mt-2">Fahad</h3>
                   <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
-                    "Logistics isn't about moving things — it's about moving possibilities. Every shipment carries someone's dream, and that responsibility drives everything we do."
+                    "Every delivery is a promise. When someone trusts us with their cargo, we treat it like our own. That's the foundation of Fahad Freight."
                   </p>
                   <div className="flex gap-6 mt-4 pt-4 border-t border-border">
                     <div>

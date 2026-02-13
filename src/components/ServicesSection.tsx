@@ -1,38 +1,38 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Ship, Plane, Truck, Warehouse, BarChart3, ShieldCheck } from "lucide-react";
+import { Truck, Package, Route, Warehouse, BarChart3, ShieldCheck } from "lucide-react";
 
 const services = [
   {
-    icon: Ship,
-    title: "Ocean Freight",
-    desc: "Full container & LCL shipments across all major trade lanes with real-time tracking.",
-  },
-  {
-    icon: Plane,
-    title: "Air Freight",
-    desc: "Express and charter services for time-critical shipments worldwide.",
-  },
-  {
     icon: Truck,
-    title: "Road Transport",
-    desc: "FTL & LTL solutions with an extensive domestic and cross-border network.",
+    title: "Full Truckload (FTL)",
+    desc: "Dedicated trucks for large shipments moving directly from city to city with no stops in between.",
+  },
+  {
+    icon: Package,
+    title: "Partial Load (LTL)",
+    desc: "Cost-effective shared truck space for smaller shipments between cities.",
+  },
+  {
+    icon: Route,
+    title: "Express Delivery",
+    desc: "Same-day and next-day intercity deliveries for time-critical cargo.",
   },
   {
     icon: Warehouse,
     title: "Warehousing",
-    desc: "Smart storage, pick & pack, and inventory management solutions.",
+    desc: "Secure storage facilities in key cities with inventory management solutions.",
   },
   {
     icon: BarChart3,
-    title: "Supply Chain",
-    desc: "End-to-end visibility and optimization for complex supply chains.",
+    title: "Fleet Tracking",
+    desc: "Real-time GPS tracking of your shipments with live updates and ETAs.",
   },
   {
     icon: ShieldCheck,
-    title: "Customs & Compliance",
-    desc: "Expert customs brokerage and regulatory compliance management.",
+    title: "Cargo Insurance",
+    desc: "Comprehensive insurance coverage to protect your goods during transit.",
   },
 ];
 
@@ -65,7 +65,7 @@ const ServicesSection = () => {
             Our <span className="text-gradient-orange">Services</span>
           </h2>
           <p className="text-accent-foreground/60 max-w-2xl mx-auto">
-            Comprehensive logistics solutions tailored to your business needs
+            Complete truck freight solutions for city-to-city deliveries
           </p>
         </motion.div>
 

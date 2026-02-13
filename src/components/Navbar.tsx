@@ -15,7 +15,7 @@ const Navbar = () => {
             <Truck className="w-5 h-5 text-primary-foreground" />
           </div>
           <span className="font-heading font-bold text-lg text-secondary-foreground tracking-tight">
-            SWIFTHAUL
+            FAHAD FREIGHT
           </span>
         </a>
 
