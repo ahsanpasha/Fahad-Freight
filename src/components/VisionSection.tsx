@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Leaf, Zap, Heart } from "lucide-react";
+import { Truck, Zap, Heart } from "lucide-react";
 import visionImage from "@/assets/vision-containers.jpg";
 
 const VisionSection = () => {
@@ -21,16 +21,16 @@ const VisionSection = () => {
           >
             <div className="absolute -inset-4 gradient-orange opacity-10 rounded-3xl blur-2xl" />
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img src={visionImage} alt="Shipping containers" className="w-full h-[500px] object-cover" />
+              <img src={visionImage} alt="Truck fleet at logistics depot" className="w-full h-[500px] object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="bg-card/90 backdrop-blur-md rounded-xl p-4 flex items-center gap-4">
                   <div className="gradient-orange p-3 rounded-lg">
-                    <Leaf className="w-6 h-6 text-primary-foreground" />
+                    <Truck className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <div className="font-heading font-bold text-card-foreground">Carbon Neutral by 2030</div>
-                    <div className="text-xs text-muted-foreground">Committed to sustainable logistics</div>
+                    <div className="font-heading font-bold text-card-foreground">100+ Trucks by 2028</div>
+                    <div className="text-xs text-muted-foreground">Expanding our fleet across the country</div>
                   </div>
                 </div>
               </div>
@@ -49,18 +49,18 @@ const VisionSection = () => {
               <span className="text-primary font-semibold text-sm uppercase tracking-widest">Our Vision</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-heading font-bold text-accent-foreground mb-6 leading-tight">
-              Redefining Logistics for a{" "}
-              <span className="text-gradient-orange">Sustainable Future</span>
+              Connecting Every City,{" "}
+              <span className="text-gradient-orange">One Truck at a Time</span>
             </h2>
             <p className="text-accent-foreground/60 leading-relaxed mb-8">
-              We envision a world where global trade flows seamlessly and sustainably. Through AI-driven route optimization, electric fleets, and carbon offset programs, we're building the logistics infrastructure of tomorrow — today.
+              Our vision is to become the most trusted truck freight company in the region. With smart route planning, a growing fleet, and a commitment to on-time delivery, we're building the future of intercity logistics.
             </p>
 
             <div className="space-y-6">
               {[
-                { icon: Zap, title: "AI-Powered Optimization", desc: "Smart algorithms reduce empty miles by 40% and cut fuel consumption." },
-                { icon: Leaf, title: "Green Fleet Initiative", desc: "Transitioning to 100% electric and hydrogen-powered vehicles by 2030." },
-                { icon: Heart, title: "Community Impact", desc: "Supporting local communities in every region we operate through fair employment." },
+                { icon: Zap, title: "Smart Route Planning", desc: "AI-optimized routes to save fuel, time, and reduce empty miles by 40%." },
+                { icon: Truck, title: "Fleet Expansion", desc: "Growing our fleet to cover 100+ cities with modern, well-maintained trucks." },
+                { icon: Heart, title: "Driver Welfare", desc: "Supporting our drivers with fair wages, rest stops, and safe working conditions." },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4">
                   <div className="gradient-orange p-3 rounded-xl h-fit flex-shrink-0">

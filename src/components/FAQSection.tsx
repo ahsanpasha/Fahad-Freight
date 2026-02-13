@@ -5,24 +5,24 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    q: "What types of cargo do you handle?",
-    a: "We handle everything from small parcels to full container loads, including hazardous materials, perishables, oversized cargo, and high-value goods. Our specialized teams ensure proper handling for every cargo type.",
+    q: "What types of cargo do you transport?",
+    a: "We handle all types of freight — from general goods, electronics, and FMCG products to heavy machinery and construction materials. Our trucks are equipped for diverse cargo needs.",
   },
   {
     q: "How can I track my shipment?",
-    a: "Every shipment gets a unique tracking ID. Use our online portal or mobile app for real-time GPS tracking, status updates, and estimated delivery times. You'll also receive automated notifications at every milestone.",
+    a: "Every truck in our fleet has GPS tracking. Once your shipment is on the road, you'll get a tracking link with live location, speed, and estimated arrival time.",
   },
   {
     q: "What are your delivery timeframes?",
-    a: "Delivery times vary by service: Air freight (1-5 days), Ocean freight (15-45 days), Road transport (1-7 days domestically). We also offer express and same-day options for urgent shipments.",
+    a: "Delivery depends on distance between cities. Same-city deliveries take a few hours, nearby cities 1 day, and long-distance routes 2-5 days. Express options are available.",
   },
   {
-    q: "Do you handle customs clearance?",
-    a: "Yes, our licensed customs brokers handle all import/export documentation, duty calculations, and regulatory compliance. We ensure smooth clearance in all 120+ countries we operate in.",
+    q: "Do you offer full and partial truckloads?",
+    a: "Yes! We offer both Full Truckload (FTL) for dedicated shipments and Less Than Truckload (LTL) for cost-effective partial loads shared with other cargo.",
   },
   {
     q: "How do I get a shipping quote?",
-    a: "Request a free quote through our website, call our sales team, or use our instant rate calculator for standard routes. We provide competitive, transparent pricing with no hidden fees.",
+    a: "Contact us via phone, email, or our website. Share your pickup city, destination, and cargo details — we'll provide a competitive quote within hours.",
   },
 ];
 

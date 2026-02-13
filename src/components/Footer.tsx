@@ -48,11 +48,11 @@ const Footer = () => {
                 <Truck className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="font-heading font-bold text-lg text-accent-foreground tracking-tight">
-                SWIFTHAUL
+                FAHAD FREIGHT
               </span>
             </div>
             <p className="text-accent-foreground/50 text-sm leading-relaxed">
-              Global logistics solutions delivering excellence across 120+ countries since 2005.
+              Reliable city-to-city truck freight delivery. Moving your cargo safely across 50+ cities.
             </p>
           </div>
 
@@ -74,7 +74,7 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-bold text-accent-foreground mb-4">Services</h4>
             <ul className="space-y-2">
-              {["Ocean Freight", "Air Freight", "Road Transport", "Warehousing", "Supply Chain"].map((s) => (
+              {["Full Truckload", "Partial Load", "Express Delivery", "Warehousing", "Fleet Tracking"].map((s) => (
                 <li key={s}>
                   <span className="text-accent-foreground/50 text-sm">{s}</span>
                 </li>
@@ -88,7 +88,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-accent-foreground/50 text-sm">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                info@swifthaul.com
+                info@fahadfreight.com
               </li>
               <li className="flex items-center gap-3 text-accent-foreground/50 text-sm">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
@@ -104,7 +104,7 @@ const Footer = () => {
 
         <div className="border-t border-accent-foreground/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-accent-foreground/30 text-sm">
-            © 2026 SwiftHaul Logistics. All rights reserved.
+            © 2026 Fahad Freight Logistics. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-accent-foreground/30 text-sm hover:text-primary transition-colors">Privacy</a>
