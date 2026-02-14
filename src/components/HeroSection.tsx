@@ -3,8 +3,26 @@ import { ArrowRight, Truck, MapPin, Clock } from "lucide-react";
 import heroImage from "@/assets/hero-logistics.jpg";
 
 const HeroSection = () => {
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+    if (element) {
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="Freight truck on highway" className="w-full h-full object-cover" />
@@ -20,26 +38,21 @@ const HeroSection = () => {
 
       <div className="section-container relative z-10 pt-24">
         <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-2 mb-6"
-          >
-            <div className="orange-dot" />
-            <span className="text-primary font-semibold text-sm uppercase tracking-widest">
-              Fahad Freight Logistics
-            </span>
-          </motion.div>
-
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-secondary-foreground leading-[1.1] mb-6"
           >
             City to City,{" "}
-            <span className="text-gradient-orange">Freight That Delivers</span>{" "}
+            <motion.span
+              initial={{ backgroundPosition: "200% center" }}
+              animate={{ backgroundPosition: "0% center" }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+              className="text-gradient-orange bg-[length:200%_auto]"
+            >
+              Freight That Delivers
+            </motion.span>{" "}
             On Time
           </motion.h1>
 
@@ -58,37 +71,52 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-wrap gap-4 mb-16"
           >
-            <a
+            <motion.a
               href="#services"
-              className="gradient-orange text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg flex items-center gap-2 hover:opacity-90 transition-opacity animate-pulse-glow"
+              whileHover={{ scale: 1.05, translateY: -2 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={(e) => handleNavLinkClick(e, "#services")}
+              className="gradient-orange text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg flex items-center gap-2 hover:shadow-xl hover:shadow-primary/20 transition-all animate-pulse-glow"
             >
               Our Services <ArrowRight className="w-5 h-5" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#about"
-              className="border-2 border-secondary-foreground/20 text-secondary-foreground px-8 py-4 rounded-xl font-semibold text-lg hover:border-primary hover:text-primary transition-colors"
+              whileHover={{ scale: 1.05, translateY: -2, borderColor: "hsl(var(--primary))", color: "hsl(var(--primary))" }}
+              whileTap={{ scale: 0.98 }}
+              onClick={(e) => handleNavLinkClick(e, "#about")}
+              className="border-2 border-secondary-foreground/20 text-secondary-foreground px-8 py-4 rounded-xl font-semibold text-lg hover:border-primary transition-all"
             >
               Learn More
-            </a>
+            </motion.a>
           </motion.div>
 
           {/* Stats */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.7 }}
             className="grid grid-cols-3 gap-6 max-w-lg"
           >
             {[
               { icon: MapPin, value: "50+", label: "Cities" },
               { icon: Truck, value: "10K+", label: "Deliveries/yr" },
               { icon: Clock, value: "99.2%", label: "On-time" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <stat.icon className="w-5 h-5 text-primary mx-auto mb-2" />
-                <div className="text-2xl font-heading font-bold text-secondary-foreground">{stat.value}</div>
-                <div className="text-xs text-secondary-foreground/50 uppercase tracking-wide">{stat.label}</div>
-              </div>
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                className="text-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 + (i * 0.1) }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="bg-secondary/40 backdrop-blur-sm border border-white/10 rounded-2xl p-4 transition-all hover:border-primary/50 hover:bg-secondary/60">
+                  <stat.icon className="w-5 h-5 text-primary mx-auto mb-2" />
+                  <div className="text-2xl font-heading font-bold text-secondary-foreground">{stat.value}</div>
+                  <div className="text-[10px] text-secondary-foreground/50 uppercase tracking-widest font-bold">{stat.label}</div>
+                </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>

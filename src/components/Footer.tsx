@@ -1,8 +1,26 @@
 import { Truck, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+    if (element) {
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
-    <footer className="gradient-navy relative overflow-hidden">
+    <footer id="footer" className="gradient-navy relative overflow-hidden">
       {/* Truck animation road */}
       <div className="relative h-24 border-b border-accent-foreground/10 overflow-hidden">
         {/* Road */}
@@ -43,12 +61,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="gradient-orange p-2 rounded-lg">
-                <Truck className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="font-heading font-bold text-lg text-accent-foreground tracking-tight">
+            <div className="flex flex-col mb-4">
+              <span className="font-heading font-black text-xl text-accent-foreground tracking-tighter leading-none">
                 FAHAD FREIGHT
+              </span>
+              <span className="text-[10px] font-bold text-primary tracking-[0.3em] uppercase opacity-80">
+                LOGISTICS
               </span>
             </div>
             <p className="text-accent-foreground/50 text-sm leading-relaxed">
@@ -57,24 +75,53 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="lg:col-span-1">
             <h4 className="font-heading font-bold text-accent-foreground mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {["About Us", "Services", "Process", "Vision", "FAQ"].map((link) => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase().replace(" ", "")}`} className="text-accent-foreground/50 text-sm hover:text-primary transition-colors">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="grid grid-cols-2 gap-x-4">
+              <ul className="space-y-2">
+                {[
+                  { label: "Home", href: "#home" },
+                  { label: "About", href: "#about" },
+                  { label: "Services", href: "#services" },
+                  { label: "Process", href: "#process" },
+                ].map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      onClick={(e) => handleNavLinkClick(e, link.href)}
+                      className="text-accent-foreground/50 text-sm hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <ul className="space-y-2">
+                {[
+                  { label: "Vision", href: "#vision" },
+                  { label: "Partners", href: "#clients" },
+                  { label: "Team", href: "#team" },
+                  { label: "FAQ", href: "#faq" }
+                ].map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      onClick={(e) => handleNavLinkClick(e, link.href)}
+                      className="text-accent-foreground/50 text-sm hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Services */}
           <div>
             <h4 className="font-heading font-bold text-accent-foreground mb-4">Services</h4>
             <ul className="space-y-2">
-              {["Full Truckload", "Partial Load", "Express Delivery", "Warehousing", "Fleet Tracking"].map((s) => (
+              {["City-to-City Logistics", "City-to-Port Export", "Port-to-City Import", "Customs Clearance", "Real-time Tracking"].map((s) => (
                 <li key={s}>
                   <span className="text-accent-foreground/50 text-sm">{s}</span>
                 </li>
@@ -88,28 +135,24 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-accent-foreground/50 text-sm">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                info@fahadfreight.com
+                fahadlogisticntn@gmail.com
               </li>
               <li className="flex items-center gap-3 text-accent-foreground/50 text-sm">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                +1 (800) 555-HAUL
+                0301-8402257
               </li>
               <li className="flex items-center gap-3 text-accent-foreground/50 text-sm">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
-                Houston, TX 77002
+                Lahore Office: Plot No. 84, New Truck Stand, Sabzazar, Lahore
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-accent-foreground/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-accent-foreground/10 mt-12 pt-8 flex items-center justify-center">
           <p className="text-accent-foreground/30 text-sm">
             © 2026 Fahad Freight Logistics. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-accent-foreground/30 text-sm hover:text-primary transition-colors">Privacy</a>
-            <a href="#" className="text-accent-foreground/30 text-sm hover:text-primary transition-colors">Terms</a>
-          </div>
         </div>
       </div>
     </footer>

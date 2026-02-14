@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Target, Users, Award } from "lucide-react";
+import { Target, Users, Shield } from "lucide-react";
 import founderImage from "@/assets/founder.jpg";
 
 const AboutSection = () => {
@@ -15,10 +15,10 @@ const AboutSection = () => {
 
       <div className="section-container">
         {/* Company About */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+        <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
             <div className="flex items-center gap-2 mb-4">
@@ -26,70 +26,103 @@ const AboutSection = () => {
               <span className="text-primary font-semibold text-sm uppercase tracking-widest">Who We Are</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6 leading-tight">
-              Built on Trust,{" "}
-              <span className="text-gradient-orange">Driven by Excellence</span>
+              About <span className="text-gradient-orange">Company</span>
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Founded by Fahad with a vision to revolutionize city-to-city freight, Fahad Freight Logistics has grown into a trusted name in truck transportation. We specialize in moving cargo between cities with speed, safety, and reliability.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              Our fleet of modern trucks and dedicated drivers ensure your goods reach their destination on time, every time. From full truckloads to partial shipments, we handle it all with care.
-            </p>
+            <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
+              <p>
+                At Fahad Freight Logistics, we offer comprehensive nationwide logistics services, efficiently connecting cities across the country. Our expertise extends to and from Karachi port, handling both import and export activities with precision. Whether you're moving goods within the country or navigating international trade through Karachi’s key port, our dedicated team ensures seamless, reliable transportation tailored to meet your specific needs.
+              </p>
+              <p>
+                Our commitment to innovation, safety, and customer service is at the core of everything we do. From the moment your shipment is entrusted to us, we handle it with the utmost care, leveraging our state-of-the-art technology and expert team to guarantee timely and secure deliveries. Whether it's by air, sea, or land, Fahad Freight Logistics is equipped to meet all your transportation needs with precision and efficiency.
+              </p>
+              <p>
+                Explore our company profile to discover how our comprehensive logistics services can support your business’s growth and success. Join us on a journey where excellence meets reliability, and let Fahad Freight Logistics be the driving force behind your supply chain.
+              </p>
+            </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
               {[
                 { icon: Target, label: "Mission Focused" },
                 { icon: Users, label: "5000+ Clients" },
-                { icon: Award, label: "ISO Certified" },
-              ].map((item) => (
-                <div key={item.label} className="flex flex-col items-center text-center p-4 rounded-xl bg-muted/50">
-                  <item.icon className="w-6 h-6 text-primary mb-2" />
-                  <span className="text-xs font-semibold text-foreground">{item.label}</span>
-                </div>
+                { icon: Shield, label: "Secure Logistics" },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  whileHover={{ y: -5, backgroundColor: "hsl(var(--muted))" }}
+                  className="flex flex-col items-center text-center p-6 rounded-2xl bg-muted/30 border border-border/50 transition-all hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
+                >
+                  <motion.div
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
+                  >
+                    <item.icon className="w-8 h-8 text-primary mb-3" />
+                  </motion.div>
+                  <span className="text-sm font-bold text-foreground uppercase tracking-widest">{item.label}</span>
+                </motion.div>
               ))}
             </div>
           </motion.div>
-
-          {/* Founder */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="relative">
-              <div className="absolute -inset-4 gradient-orange rounded-2xl opacity-20 blur-xl" />
-              <div className="relative bg-card rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src={founderImage}
-                  alt="Fahad - Founder & CEO"
-                  className="w-full h-80 object-cover object-top"
-                />
-                <div className="p-6 relative">
-                  <div className="absolute top-0 left-6 -translate-y-1/2">
-                    <div className="gradient-orange px-4 py-1 rounded-full text-primary-foreground text-xs font-bold uppercase tracking-wider">
-                      Founder & CEO
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-heading font-bold text-card-foreground mt-2">Fahad</h3>
-                  <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
-                    "Every delivery is a promise. When someone trusts us with their cargo, we treat it like our own. That's the foundation of Fahad Freight."
-                  </p>
-                  <div className="flex gap-6 mt-4 pt-4 border-t border-border">
-                    <div>
-                      <div className="text-lg font-bold font-heading text-primary">20+</div>
-                      <div className="text-xs text-muted-foreground">Years Experience</div>
-                    </div>
-                    <div>
-                      <div className="text-lg font-bold font-heading text-primary">Forbes</div>
-                      <div className="text-xs text-muted-foreground">Top 40 Under 40</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
+
+        {/* Mission Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="bg-accent/5 backdrop-blur-sm border border-accent-foreground/5 rounded-3xl p-8 lg:p-12"
+        >
+          <div className="flex items-center gap-2 mb-6">
+            <div className="orange-dot" />
+            <span className="text-primary font-semibold text-sm uppercase tracking-widest">Our Mission</span>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Deliver Exceptional Logistics Solutions",
+                desc: "Ensure the seamless movement of goods across the globe with top-notch services.",
+              },
+              {
+                title: "Commit to Reliability and Efficiency",
+                desc: "Provide dependable and cost-effective solutions tailored to meet each client's unique needs.",
+              },
+              {
+                title: "Embrace Innovation and Integrity",
+                desc: "Utilize advanced methods and uphold ethical practices to enhance service quality.",
+              },
+              {
+                title: "Adopt a Customer-First Approach",
+                desc: "Focus on building lasting partnerships and supporting client success.",
+              },
+              {
+                title: "Enhance Supply Chain Efficiency",
+                desc: "Contribute to clients' business growth by improving their logistical operations.",
+              },
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 + (idx * 0.1) }}
+                whileHover={{ x: 5 }}
+                className="flex gap-4 group"
+              >
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-300 shadow-lg group-hover:shadow-primary/30">
+                  <Target className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground mb-1 group-hover:text-primary transition-colors">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

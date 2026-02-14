@@ -53,35 +53,56 @@ const ProcessSection = () => {
         </motion.div>
 
         <div className="relative">
-          {/* Connector line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-full -translate-y-1/2 opacity-20" />
+          {/* Connector line with drawing animation */}
+          <div className="hidden lg:block absolute top-[60px] left-[15%] right-[15%] h-[2px] overflow-hidden">
+            <motion.div
+              initial={{ x: "-100%" }}
+              whileInView={{ x: "0%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
+              className="w-full h-full bg-gradient-to-r from-primary via-secondary to-primary opacity-30"
+            />
+          </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {steps.map((step, i) => (
               <motion.div
                 key={step.step}
                 initial={{ opacity: 0, y: 40 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: i * 0.2 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: i * 0.2 }}
                 className="relative"
               >
-                <div className="bg-card rounded-2xl p-8 shadow-lg border border-border relative overflow-hidden group hover:shadow-xl transition-shadow">
-                  {/* Step number background */}
-                  <div className="absolute top-4 right-4 text-7xl font-heading font-bold text-muted/50 select-none">
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="bg-card rounded-3xl p-8 shadow-lg border border-border relative overflow-hidden group hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
+                >
+                  {/* Step number background with reveal */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 0.1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.5 + (i * 0.2) }}
+                    className="absolute top-4 right-6 text-8xl font-heading font-black text-primary select-none pointer-events-none"
+                  >
                     {step.step}
-                  </div>
+                  </motion.div>
 
                   <div className="relative z-10">
-                    <div className="gradient-orange w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <motion.div
+                      className="gradient-orange w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-primary/20"
+                      whileHover={{ rotate: 10, scale: 1.1 }}
+                    >
                       <step.icon className="w-8 h-8 text-primary-foreground" />
-                    </div>
-                    <h3 className="text-2xl font-heading font-bold text-card-foreground mb-3">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{step.desc}</p>
+                    </motion.div>
+                    <h3 className="text-2xl font-heading font-bold text-card-foreground mb-4 group-hover:text-primary transition-colors">{step.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-base">{step.desc}</p>
                   </div>
 
-                  {/* Bottom accent bar */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 gradient-orange opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
+                  {/* Bottom accent glow */}
+                  <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </motion.div>
               </motion.div>
             ))}
           </div>
