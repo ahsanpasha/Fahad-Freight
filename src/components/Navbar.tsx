@@ -45,9 +45,6 @@ const Navbar = () => {
 
   return (
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 border-b border-white/10 ${isScrolled
         ? "h-16 bg-secondary/80 backdrop-blur-xl shadow-lg shadow-primary/5"
         : "h-16 bg-transparent"
@@ -57,9 +54,6 @@ const Navbar = () => {
         {/* Brand Identity - Clean Text Only */}
         <motion.a
           href="#home"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
           onClick={(e) => handleNavLinkClick(e, "#home")}
           className="flex flex-col group"
         >
@@ -75,9 +69,6 @@ const Navbar = () => {
             <motion.a
               key={link.label}
               href={link.href}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 + (i * 0.1) }}
               whileHover={{ y: -2 }}
               onClick={(e) => handleNavLinkClick(e, link.href)}
               className="text-sm font-semibold text-secondary-foreground/70 hover:text-primary transition-all relative group"
