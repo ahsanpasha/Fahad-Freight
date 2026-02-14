@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Truck } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
     if (element) {
-      const offset = 80;
+      const offset = 80; // Adjusted offset for taller Navbar
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -49,29 +49,24 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled
-          ? "h-14 bg-secondary/80 backdrop-blur-xl border-b border-primary/20 shadow-lg shadow-primary/5"
+          ? "h-16 bg-secondary/80 backdrop-blur-xl border-b border-primary/20 shadow-lg shadow-primary/5"
           : "h-20 bg-transparent"
         }`}
     >
       <nav className="h-full section-container flex items-center justify-between">
-        {/* Brand Identity */}
+        {/* Brand Identity - Clean Text Only */}
         <motion.a
           href="#home"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
           onClick={(e) => handleNavLinkClick(e, "#home")}
-          className="flex items-center gap-2 group"
+          className="flex flex-col group"
         >
-          <div className="w-9 h-9 gradient-orange rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-primary/20">
-            <Truck className="w-5 h-5 text-primary-foreground" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-heading font-bold text-xl tracking-tight text-secondary-foreground leading-none">
-              Fahad<span className="text-primary group-hover:text-primary/80 transition-colors">Freight</span>
-            </span>
-            <span className="text-[10px] font-bold text-secondary-foreground/40 uppercase tracking-[0.2em] mt-1">Logistics</span>
-          </div>
+          <span className="font-heading font-bold text-xl tracking-tight text-secondary-foreground leading-none">
+            Fahad<span className="text-primary group-hover:text-primary/80 transition-colors">Freight</span>
+          </span>
+          <span className="text-[10px] font-bold text-secondary-foreground/40 uppercase tracking-[0.2em] mt-1 group-hover:text-primary/30 transition-colors">Logistics</span>
         </motion.a>
 
         {/* Desktop Navigation */}
@@ -91,25 +86,15 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </motion.a>
           ))}
-          <motion.a
-            href="#footer"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.1 }}
-            onClick={(e) => handleNavLinkClick(e, "#footer")}
-            className="gradient-orange text-primary-foreground px-6 py-2.5 rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all active:scale-95"
-          >
-            REQUEST QUOTE
-          </motion.a>
         </div>
 
         {/* Mobile Toggle */}
         <motion.button
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden relative w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-secondary-foreground hover:bg-white/10 transition-colors"
+          className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-secondary-foreground hover:bg-white/10 transition-colors"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
         </motion.button>
       </nav>
 
@@ -137,16 +122,6 @@ const Navbar = () => {
                   <div className="w-10 h-0.5 bg-primary/20 group-hover:bg-primary transition-all duration-300" />
                 </motion.a>
               ))}
-              <motion.a
-                href="#footer"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                onClick={(e) => handleNavLinkClick(e, "#footer")}
-                className="gradient-orange text-center py-5 rounded-2xl font-bold text-primary-foreground mt-4 shadow-xl shadow-primary/20"
-              >
-                REQUEST QUOTE
-              </motion.a>
             </div>
           </motion.div>
         )}
