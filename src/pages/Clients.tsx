@@ -116,7 +116,7 @@ const Clients = () => {
                         className="text-center mb-16 relative"
                     >
                         {/* Back Button */}
-                        <div className="flex justify-start mb-8 lg:absolute lg:top-0 lg:left-0 lg:mb-0">
+                        <div className="flex justify-start mb-8">
                             <Link
                                 to="/"
                                 className="group flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-colors"
