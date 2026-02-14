@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation, Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isClientsPage = location.pathname === "/clients";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +18,11 @@ const Navbar = () => {
   }, []);
 
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // If we're on the clients page, we should navigate back to home with the hash
+    if (isClientsPage && href.startsWith("#")) {
+      return; // Let regular link handling work or handle specifically
+    }
+
     e.preventDefault();
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
@@ -34,34 +42,35 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Process", href: "#process" },
-    { label: "Vision", href: "#vision" },
-    { label: "Partners", href: "#clients" },
-    { label: "Team", href: "#team" },
-    { label: "FAQ", href: "#faq" },
+    { label: "About", href: isClientsPage ? "/#about" : "#about" },
+    { label: "Services", href: isClientsPage ? "/#services" : "#services" },
+    { label: "Process", href: isClientsPage ? "/#process" : "#process" },
+    { label: "Vision", href: isClientsPage ? "/#vision" : "#vision" },
+    { label: "Partners", href: isClientsPage ? "/#clients" : "#clients" },
+    { label: "Team", href: isClientsPage ? "/#team" : "#team" },
+    { label: "FAQ", href: isClientsPage ? "/#faq" : "#faq" },
   ];
+
+  const isSolid = isScrolled || isClientsPage;
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 border-b border-white/10 ${isScrolled
-        ? "h-16 bg-secondary/80 backdrop-blur-xl shadow-lg shadow-primary/5"
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 border-b border-white/10 ${isSolid
+        ? "h-16 bg-secondary shadow-lg shadow-primary/5"
         : "h-16 bg-transparent"
         }`}
     >
       <nav className="h-full section-container flex items-center justify-between">
         {/* Brand Identity - Clean Text Only */}
-        <motion.a
-          href="#home"
-          onClick={(e) => handleNavLinkClick(e, "#home")}
+        <Link
+          to="/"
           className="flex flex-col group"
         >
           <span className="font-heading font-bold text-xl tracking-tight text-secondary-foreground leading-none">
             Fahad<span className="text-primary group-hover:text-primary/80 transition-colors">Freight</span>
           </span>
           <span className="text-[10px] font-bold text-secondary-foreground/40 uppercase tracking-[0.2em] mt-1 group-hover:text-primary/30 transition-colors">Logistics</span>
-        </motion.a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
@@ -70,7 +79,7 @@ const Navbar = () => {
               key={link.label}
               href={link.href}
               whileHover={{ y: -2 }}
-              onClick={(e) => handleNavLinkClick(e, link.href)}
+              onClick={(e) => !link.href.startsWith("/") && handleNavLinkClick(e, link.href)}
               className="text-sm font-semibold text-secondary-foreground/70 hover:text-primary transition-all relative group"
             >
               {link.label}
@@ -106,7 +115,7 @@ const Navbar = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  onClick={(e) => handleNavLinkClick(e, link.href)}
+                  onClick={(e) => !link.href.startsWith("/") && handleNavLinkClick(e, link.href)}
                   className="text-2xl font-heading font-bold text-secondary-foreground/60 hover:text-primary transition-colors flex items-center justify-between group py-2"
                 >
                   {link.label}
