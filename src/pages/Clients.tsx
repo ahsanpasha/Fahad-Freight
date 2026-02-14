@@ -118,7 +118,7 @@ const Clients = () => {
                         {/* Back Button */}
                         <div className="flex justify-start mb-8">
                             <Link
-                                to="/"
+                                to="/#clients"
                                 className="group flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-colors"
                             >
                                 <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all">

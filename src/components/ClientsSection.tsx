@@ -55,7 +55,7 @@ const ClientsSection = () => {
                             >
                                 {client}
                             </span>
-                            <div className="w-2 h-2 rounded-full bg-primary/20 group-hover/client:bg-primary group-hover/client:scale-150 transition-all duration-500" />
+                            <div className="w-2 h-2 rounded-full bg-primary/20" />
                         </div>
                     ))}
                 </motion.div>
