@@ -70,7 +70,7 @@ const FAQSection = () => {
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between p-8 text-left group transition-colors"
+                className="w-full flex items-center justify-between p-5 sm:p-6 lg:p-8 text-left group transition-colors"
               >
                 <span className={`text-xl font-heading font-bold transition-colors ${open === i ? "text-primary" : "text-card-foreground group-hover:text-primary"}`}>
                   {faq.q}
@@ -89,7 +89,7 @@ const FAQSection = () => {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                   >
-                    <div className="px-8 pb-8">
+                    <div className="px-5 pb-5 sm:px-6 sm:pb-6 lg:px-8 lg:pb-8">
                       <div className="h-[1px] w-full bg-border/50 mb-6" />
                       <p className="text-muted-foreground text-lg leading-relaxed italic">
                         "{faq.a}"

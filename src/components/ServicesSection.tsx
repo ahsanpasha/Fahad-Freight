@@ -63,7 +63,7 @@ const ServicesSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               whileHover={{ y: -8 }}
-              className="group relative bg-accent/10 backdrop-blur-md border border-accent-foreground/10 rounded-2xl p-8 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
+              className="group relative bg-accent/10 backdrop-blur-md border border-accent-foreground/10 rounded-2xl p-5 sm:p-6 lg:p-8 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
             >
               <motion.div
                 className="gradient-orange w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-shadow"

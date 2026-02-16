@@ -76,7 +76,7 @@ const ProcessSection = () => {
               >
                 <motion.div
                   whileHover={{ y: -10 }}
-                  className="bg-card rounded-3xl p-8 shadow-lg border border-border relative overflow-hidden group hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
+                  className="bg-card rounded-3xl p-5 sm:p-6 lg:p-8 shadow-lg border border-border relative overflow-hidden group hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500"
                 >
                   {/* Step number background with reveal */}
                   <motion.div
