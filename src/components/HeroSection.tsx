@@ -96,7 +96,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.7 }}
-            className="grid grid-cols-3 gap-6 max-w-lg"
+            className="grid grid-cols-3 gap-3 sm:gap-6 max-w-lg"
           >
             {[
               { icon: MapPin, value: "50+", label: "Cities" },
@@ -111,10 +111,10 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 0.8 + (i * 0.1) }}
                 whileHover={{ y: -5 }}
               >
-                <div className="bg-secondary/40 backdrop-blur-sm border border-white/10 rounded-2xl p-4 transition-all hover:border-primary/50 hover:bg-secondary/60">
-                  <stat.icon className="w-5 h-5 text-primary mx-auto mb-2" />
-                  <div className="text-xl sm:text-2xl font-heading font-bold text-secondary-foreground">{stat.value}</div>
-                  <div className="text-[9px] sm:text-[10px] text-secondary-foreground/50 uppercase tracking-widest font-bold">{stat.label}</div>
+                <div className="bg-secondary/40 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-2 sm:p-4 transition-all hover:border-primary/50 hover:bg-secondary/60">
+                  <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary mx-auto mb-1 sm:mb-2" />
+                  <div className="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-secondary-foreground">{stat.value}</div>
+                  <div className="text-[8px] sm:text-[9px] lg:text-[10px] text-secondary-foreground/50 uppercase tracking-widest font-bold">{stat.label}</div>
                 </div>
               </motion.div>
             ))}
