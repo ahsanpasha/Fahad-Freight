@@ -22,7 +22,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pb-8">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="Freight truck on highway" className="w-full h-full object-cover" />

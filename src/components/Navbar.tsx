@@ -17,13 +17,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement> | null, href: string) => {
     // If we're on the clients page, we should navigate back to home with the hash
     if (isClientsPage && href.startsWith("#")) {
       return; // Let regular link handling work or handle specifically
     }
 
-    e.preventDefault();
+    if (e) e.preventDefault();
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
     if (element) {
@@ -115,7 +115,17 @@ const Navbar = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  onClick={(e) => !link.href.startsWith("/") && handleNavLinkClick(e, link.href)}
+                  onClick={(e) => {
+                    if (!link.href.startsWith("/")) {
+                      e.preventDefault();
+                      setIsOpen(false);
+                      setTimeout(() => {
+                        handleNavLinkClick(null, link.href);
+                      }, 300);
+                    } else {
+                      setIsOpen(false);
+                    }
+                  }}
                   className="text-2xl font-heading font-bold text-secondary-foreground/60 hover:text-primary transition-colors flex items-center justify-between group py-2"
                 >
                   {link.label}
