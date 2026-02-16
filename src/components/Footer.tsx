@@ -65,12 +65,10 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               <img src={logo} alt="Fahad Freight Logo" className="h-12 w-12 object-contain" />
               <div className="flex flex-col">
-                <span className="font-heading font-black text-xl text-accent-foreground tracking-tighter leading-none">
-                  FAHAD FREIGHT
+                <span className="font-heading font-bold text-xl tracking-tight text-secondary-foreground leading-none">
+                  Fahad<span className="text-primary transition-colors">Freight</span>
                 </span>
-                <span className="text-[10px] font-bold text-primary tracking-[0.3em] uppercase opacity-80">
-                  LOGISTICS
-                </span>
+                <span className="text-[10px] font-bold text-secondary-foreground uppercase tracking-[0.2em] mt-1 transition-colors">Logistics</span>
               </div>
             </div>
             <p className="text-accent-foreground/50 text-sm leading-relaxed">

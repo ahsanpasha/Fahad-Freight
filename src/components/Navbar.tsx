@@ -70,9 +70,9 @@ const Navbar = () => {
           <img src={logo} alt="Fahad Freight Logo" className="h-12 w-12 object-contain" />
           <div className="flex flex-col">
             <span className="font-heading font-bold text-xl tracking-tight text-secondary-foreground leading-none">
-              Fahad<span className="text-primary group-hover:text-primary/80 transition-colors">Freight</span>
+              Fahad<span className="text-primary transition-colors">Freight</span>
             </span>
-            <span className="text-[10px] font-bold text-secondary-foreground/40 uppercase tracking-[0.2em] mt-1 group-hover:text-primary/30 transition-colors">Logistics</span>
+            <span className="text-[10px] font-bold text-secondary-foreground uppercase tracking-[0.2em] mt-1 transition-colors">Logistics</span>
           </div>
         </Link>
 
