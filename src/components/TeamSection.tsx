@@ -71,7 +71,7 @@ const TeamSection = () => {
                         >
                             <motion.div
                                 whileHover={{ y: -8, scale: 1.01 }}
-                                className="bg-accent/10 backdrop-blur-md border border-accent-foreground/10 rounded-3xl p-10 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 h-full flex flex-col"
+                                className="bg-accent/10 backdrop-blur-md border border-accent-foreground/10 rounded-3xl p-5 sm:p-8 lg:p-10 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 h-full flex flex-col"
                             >
                                 <motion.div
                                     className="gradient-orange w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-500 flex-shrink-0"
