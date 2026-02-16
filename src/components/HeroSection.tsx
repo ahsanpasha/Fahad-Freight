@@ -69,14 +69,14 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-wrap gap-4 mb-16"
+            className="flex flex-col min-[500px]:flex-row gap-4 mb-16"
           >
             <motion.a
               href="#services"
               whileHover={{ scale: 1.05, translateY: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={(e) => handleNavLinkClick(e, "#services")}
-              className="gradient-orange text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg flex items-center gap-2 hover:shadow-xl hover:shadow-primary/20 transition-all animate-pulse-glow"
+              className="gradient-orange text-primary-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-base sm:text-lg flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-primary/20 transition-all animate-pulse-glow w-full min-[500px]:w-auto"
             >
               Our Services <ArrowRight className="w-5 h-5" />
             </motion.a>
@@ -85,7 +85,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05, translateY: -2, borderColor: "hsl(var(--primary))", color: "hsl(var(--primary))" }}
               whileTap={{ scale: 0.98 }}
               onClick={(e) => handleNavLinkClick(e, "#about")}
-              className="border-2 border-secondary-foreground/20 text-secondary-foreground px-8 py-4 rounded-xl font-semibold text-lg hover:border-primary transition-all"
+              className="border-2 border-secondary-foreground/20 text-secondary-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:border-primary transition-all w-full min-[500px]:w-auto flex items-center justify-center"
             >
               Learn More
             </motion.a>
