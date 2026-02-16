@@ -31,12 +31,12 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
-      <ProcessSection />
+      {/* <ProcessSection />
       <VisionSection />
       <ClientsSection />
       <TeamSection />
       <FAQSection />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };
