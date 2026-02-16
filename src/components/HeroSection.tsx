@@ -113,8 +113,8 @@ const HeroSection = () => {
               >
                 <div className="bg-secondary/40 backdrop-blur-sm border border-white/10 rounded-2xl p-4 transition-all hover:border-primary/50 hover:bg-secondary/60">
                   <stat.icon className="w-5 h-5 text-primary mx-auto mb-2" />
-                  <div className="text-2xl font-heading font-bold text-secondary-foreground">{stat.value}</div>
-                  <div className="text-[10px] text-secondary-foreground/50 uppercase tracking-widest font-bold">{stat.label}</div>
+                  <div className="text-xl sm:text-2xl font-heading font-bold text-secondary-foreground">{stat.value}</div>
+                  <div className="text-[9px] sm:text-[10px] text-secondary-foreground/50 uppercase tracking-widest font-bold">{stat.label}</div>
                 </div>
               </motion.div>
             ))}
