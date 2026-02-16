@@ -64,8 +64,8 @@ const FAQSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`bg-card border transition-all duration-300 rounded-3xl overflow-hidden ${open === i
-                  ? "border-primary/30 shadow-2xl shadow-primary/5"
-                  : "border-border hover:border-primary/20 shadow-sm hover:shadow-md"
+                ? "border-primary/30 shadow-2xl shadow-primary/5"
+                : "border-border hover:border-primary/20 shadow-sm hover:shadow-md"
                 }`}
             >
               <button
@@ -75,7 +75,7 @@ const FAQSection = () => {
                 <span className={`text-xl font-heading font-bold transition-colors ${open === i ? "text-primary" : "text-card-foreground group-hover:text-primary"}`}>
                   {faq.q}
                 </span>
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${open === i ? "bg-primary text-primary-foreground rotate-180" : "bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground"
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 shrink-0 ${open === i ? "bg-primary text-primary-foreground rotate-180" : "bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground"
                   }`}>
                   <ChevronDown className="w-5 h-5" />
                 </div>
