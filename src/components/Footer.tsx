@@ -1,4 +1,5 @@
 import { Truck, Mail, Phone, MapPin } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const Footer = () => {
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -61,13 +62,16 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex flex-col mb-4">
-              <span className="font-heading font-black text-xl text-accent-foreground tracking-tighter leading-none">
-                FAHAD FREIGHT
-              </span>
-              <span className="text-[10px] font-bold text-primary tracking-[0.3em] uppercase opacity-80">
-                LOGISTICS
-              </span>
+            <div className="flex items-center gap-2 mb-4">
+              <img src={logo} alt="Fahad Freight Logo" className="h-12 w-12 object-contain" />
+              <div className="flex flex-col">
+                <span className="font-heading font-black text-xl text-accent-foreground tracking-tighter leading-none">
+                  FAHAD FREIGHT
+                </span>
+                <span className="text-[10px] font-bold text-primary tracking-[0.3em] uppercase opacity-80">
+                  LOGISTICS
+                </span>
+              </div>
             </div>
             <p className="text-accent-foreground/50 text-sm leading-relaxed">
               Reliable city-to-city truck freight delivery. Moving your cargo safely across 50+ cities.
@@ -139,7 +143,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-accent-foreground/50 text-sm">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                0301-8402257
+                +92 301 8402257
               </li>
               <li className="flex items-center gap-3 text-accent-foreground/50 text-sm">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0" />

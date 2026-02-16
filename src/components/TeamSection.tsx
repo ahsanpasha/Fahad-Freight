@@ -6,13 +6,13 @@ const team = [
         name: "Muhammad Mobeen",
         role: "Chief Executive Officer (CEO)",
         desc: "Muhammad Mobeen brings over 30 years of unparalleled experience and leadership to his role as CEO of Fahad Freight Logistics. With a distinguished career in the logistics and transportation industry, Mobeen has demonstrated a deep understanding of global supply chains and a commitment to operational excellence. His visionary leadership and strategic insight have been instrumental in driving the company’s growth and innovation. Under his guidance, Fahad Freight Logistics continues to set new benchmarks in reliability, efficiency, and customer satisfaction, solidifying its position as a leader in the logistics sector.",
-        icon: Award,
+        icon: User,
     },
     {
         name: "Muhammad Naveed",
         role: "Dedicated Broker",
         desc: "M Naveed has been a dedicated broker at Fahad Freight Logistics for 20 years. His extensive experience and in-depth knowledge of the logistics industry have been essential in managing client transactions and ensuring smooth operations. Naveed’s expertise continues to be a cornerstone of our success.",
-        icon: Briefcase,
+        icon: User,
     },
     {
         name: "Muhammad Asif",
@@ -24,7 +24,7 @@ const team = [
         name: "Fahad Mobeen",
         role: "Accountant & Manager",
         desc: "M Fahad combines his expertise as an accountant with his role as a manager at Fahad Freight Logistics. With a keen eye for financial accuracy and strong leadership skills, he manages financial operations and oversees team performance, ensuring efficient and effective support for the company’s objectives.",
-        icon: Calculator,
+        icon: User,
     },
 ];
 
