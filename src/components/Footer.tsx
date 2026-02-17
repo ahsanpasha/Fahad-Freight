@@ -1,5 +1,6 @@
 import { Truck, Mail, Phone, MapPin } from "lucide-react";
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -82,37 +83,34 @@ const Footer = () => {
             <div className="grid grid-cols-2 gap-x-4">
               <ul className="space-y-2">
                 {[
-                  { label: "Home", href: "#home" },
-                  { label: "About", href: "#about" },
-                  { label: "Services", href: "#services" },
-                  { label: "Process", href: "#process" },
+                  { label: "Home", href: "/" },
+                  { label: "About", href: "/about" },
+                  { label: "Services", href: "/services" },
+                  { label: "Process", href: "/process" },
                 ].map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      onClick={(e) => handleNavLinkClick(e, link.href)}
+                    <Link
+                      to={link.href}
                       className="text-accent-foreground/50 text-sm hover:text-primary transition-colors"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
               <ul className="space-y-2">
                 {[
-                  { label: "Vision", href: "#vision" },
-                  { label: "Partners", href: "#clients" },
-                  { label: "Team", href: "#team" },
-                  { label: "FAQ", href: "#faq" }
+                  { label: "Partners", href: "/clients" },
+                  { label: "Team", href: "/team" },
+                  { label: "Contact", href: "/contact" },
                 ].map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      onClick={(e) => handleNavLinkClick(e, link.href)}
+                    <Link
+                      to={link.href}
                       className="text-accent-foreground/50 text-sm hover:text-primary transition-colors"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

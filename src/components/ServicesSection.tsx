@@ -27,14 +27,6 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="py-24 gradient-navy relative overflow-hidden" ref={ref}>
-      {/* Geometric pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="w-full h-full" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, hsl(24 95% 53%) 1px, transparent 0)',
-          backgroundSize: '40px 40px',
-        }} />
-      </div>
-
       <div className="section-container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -63,7 +55,7 @@ const ServicesSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               whileHover={{ y: -8 }}
-              className="group relative bg-accent/10 backdrop-blur-md border border-accent-foreground/10 rounded-2xl p-5 sm:p-6 lg:p-8 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
+              className="group relative bg-card border border-border shadow-lg rounded-3xl p-8 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5"
             >
               <motion.div
                 className="gradient-orange w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-shadow"
@@ -72,11 +64,11 @@ const ServicesSection = () => {
               >
                 <service.icon className="w-8 h-8 text-primary-foreground" />
               </motion.div>
-              <h3 className="text-2xl font-heading font-bold text-accent-foreground mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
-              <p className="text-accent-foreground/60 text-base leading-relaxed">{service.desc}</p>
+              <h3 className="text-2xl font-heading font-bold text-foreground mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
+              <p className="text-muted-foreground text-base leading-relaxed">{service.desc}</p>
 
-              {/* Subtle accent line */}
-              <div className="absolute bottom-6 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+              {/* Bottom accent glow */}
+              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>
           ))}
         </div>

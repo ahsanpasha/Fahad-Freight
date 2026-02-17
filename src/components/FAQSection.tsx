@@ -63,9 +63,9 @@ const FAQSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`bg-card border transition-all duration-300 rounded-3xl overflow-hidden ${open === i
+              className={`bg-card border transition-all duration-300 rounded-[2rem] overflow-hidden group relative ${open === i
                 ? "border-primary/30 shadow-2xl shadow-primary/5"
-                : "border-border hover:border-primary/20 shadow-sm hover:shadow-md"
+                : "border-border hover:border-primary/20 shadow-lg hover:shadow-xl"
                 }`}
             >
               <button
@@ -98,6 +98,9 @@ const FAQSection = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
+
+              {/* Bottom accent glow */}
+              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>
           ))}
         </div>

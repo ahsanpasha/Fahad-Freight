@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Building2, ShieldCheck, ArrowLeft } from "lucide-react";
+import { Building2, ShieldCheck, ArrowLeft, Network } from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import visionBg from "@/assets/processnew.jpg";
 
 const clientDetails = [
     {
@@ -107,39 +108,37 @@ const Clients = () => {
         <div className="min-h-screen bg-background">
             <Navbar />
 
-            <main className="pt-32 pb-20">
-                <section className="section-container">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="text-center mb-16 relative"
-                    >
-                        {/* Back Button */}
-                        <div className="flex justify-start mb-8">
-                            <Link
-                                to="/#clients"
-                                className="group flex items-center gap-2 text-sm font-bold text-muted-foreground hover:text-primary transition-colors"
-                            >
-                                <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all">
-                                    <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-                                </div>
-                                <span className="uppercase tracking-widest">Back to Home</span>
-                            </Link>
-                        </div>
+            {/* Hero Section */}
+            <section className="relative pt-32 pb-20 overflow-hidden bg-secondary">
+                <div className="absolute inset-0">
+                    <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${visionBg})` }} />
+                    <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/40" />
+                </div>
 
-                        <div className="flex items-center justify-center gap-2 mb-4">
-                            <div className="orange-dot" />
-                            <span className="text-primary font-semibold text-sm uppercase tracking-widest">Our Network</span>
+                <div className="section-container relative z-10 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <div className="flex items-center justify-center gap-2 mb-6">
+                            <div className="orange-dot shadow-[0_0_15px_rgba(255,107,0,0.5)]" />
+                            <span className="text-primary font-bold text-sm uppercase tracking-widest">Our Network</span>
                         </div>
-                        <h1 className="text-4xl lg:text-6xl font-heading font-bold text-foreground mb-6">
-                            Our <span className="text-gradient-orange">Trusted Partners</span>
+                        <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6">
+                            Trusted <span className="text-gradient-orange">Partners</span>
                         </h1>
-                        <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
-                            We take pride in serving some of the most prestigious industrial and business groups in the country,
-                            connecting their visions with reliable logistical execution.
+                        <p className="text-white/70 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+                            Serving the nation's most prestigious industrial groups with reliable and efficient logistics solutions.
                         </p>
                     </motion.div>
+                </div>
+            </section>
+
+            <main className="py-24">
+                <section className="section-container">
+                    {/* Back Button - kept for easy navigation */}
+
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {clientDetails.map((client, idx) => (
@@ -150,28 +149,38 @@ const Clients = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                                 whileHover={{ y: -5 }}
-                                className="group relative p-8 rounded-3xl bg-secondary/5 border border-border/50 hover:border-primary/30 transition-all duration-300"
+                                className="group relative p-8 rounded-3xl bg-card border border-border shadow-lg hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 h-full flex flex-col overflow-hidden"
                             >
-                                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
                                     <Building2 className="w-12 h-12 text-primary" />
                                 </div>
 
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                                        <ShieldCheck className="w-5 h-5 text-primary" />
+                                <div className="relative z-10 flex flex-col h-full">
+                                    <div className="flex items-center gap-3 mb-6">
+                                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
+                                            <ShieldCheck className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+                                        </div>
+                                        <span className="text-xs font-bold text-primary uppercase tracking-wider bg-primary/5 px-3 py-1 rounded-full border border-primary/10">
+                                            {client.industry}
+                                        </span>
                                     </div>
-                                    <span className="text-xs font-bold text-primary uppercase tracking-tighter">
-                                        {client.industry}
-                                    </span>
+
+                                    <h3 className="text-xl font-heading font-bold text-foreground mb-4 group-hover:text-primary transition-colors uppercase tracking-tight">
+                                        {client.name}
+                                    </h3>
+
+                                    <p className="text-muted-foreground text-sm leading-relaxed flex-grow">
+                                        {client.description}
+                                    </p>
+
+                                    <div className="mt-6 pt-6 border-t border-border/50 flex items-center gap-2 text-xs font-bold text-muted-foreground group-hover:text-primary transition-colors">
+                                        <Network className="w-4 h-4" />
+                                        <span>Official Partner</span>
+                                    </div>
                                 </div>
 
-                                <h3 className="text-xl font-heading font-bold text-foreground mb-3 group-hover:text-primary transition-colors uppercase tracking-tight">
-                                    {client.name}
-                                </h3>
-
-                                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                                    {client.description}
-                                </p>
+                                {/* Bottom accent glow */}
+                                <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             </motion.div>
                         ))}
                     </div>

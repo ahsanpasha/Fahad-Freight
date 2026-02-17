@@ -1,37 +1,34 @@
 import { motion } from "framer-motion";
-import { User, Briefcase, Calculator, Award } from "lucide-react";
+import { User, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const team = [
     {
         name: "Muhammad Mobeen",
         role: "Chief Executive Officer (CEO)",
-        desc: "Muhammad Mobeen brings over 30 years of unparalleled experience and leadership to his role as CEO of Fahad Freight Logistics. With a distinguished career in the logistics and transportation industry, Mobeen has demonstrated a deep understanding of global supply chains and a commitment to operational excellence. His visionary leadership and strategic insight have been instrumental in driving the company’s growth and innovation. Under his guidance, Fahad Freight Logistics continues to set new benchmarks in reliability, efficiency, and customer satisfaction, solidifying its position as a leader in the logistics sector.",
-        icon: User,
+        slug: "muhammad-mobeen",
     },
     {
         name: "Muhammad Naveed",
         role: "Dedicated Broker",
-        desc: "M Naveed has been a dedicated broker at Fahad Freight Logistics for 20 years. His extensive experience and in-depth knowledge of the logistics industry have been essential in managing client transactions and ensuring smooth operations. Naveed’s expertise continues to be a cornerstone of our success.",
-        icon: User,
+        slug: "muhammad-naveed",
     },
     {
         name: "Muhammad Asif",
         role: "Transport and Truck Manager",
-        desc: "With 15 years of logistics experience, Muhammad Asif excels as the Transport and Truck Manager at Fahad Freight Logistics. His expertise in fleet management ensures that all trucking operations run efficiently and on time. Asif’s leadership and attention to detail are crucial in upholding the high standards of reliability our clients expect, making him a vital asset to our team.",
-        icon: User,
+        slug: "muhammad-asif",
     },
     {
         name: "Fahad Mobeen",
         role: "Accountant & Manager",
-        desc: "M Fahad combines his expertise as an accountant with his role as a manager at Fahad Freight Logistics. With a keen eye for financial accuracy and strong leadership skills, he manages financial operations and oversees team performance, ensuring efficient and effective support for the company’s objectives.",
-        icon: User,
+        slug: "fahad-mobeen",
     },
 ];
 
 const TeamSection = () => {
     return (
         <section id="team" className="py-24 gradient-navy relative overflow-hidden">
-            {/* Geometric pattern from ServicesSection */}
+            {/* Geometric pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div className="w-full h-full" style={{
                     backgroundImage: 'radial-gradient(circle at 2px 2px, hsl(24 95% 53%) 1px, transparent 0)',
@@ -55,11 +52,11 @@ const TeamSection = () => {
                         Meet Our <span className="text-gradient-orange">Team</span>
                     </h2>
                     <p className="text-accent-foreground/60 max-w-2xl mx-auto">
-                        Decades of experience driving the future of logistics with excellence and integrity.
+                        45+ years of experience driving the future of logistics with excellence and integrity.
                     </p>
                 </motion.div>
 
-                <div className="grid lg:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch max-w-7xl mx-auto">
                     {team.map((member, i) => (
                         <motion.div
                             key={member.name}
@@ -69,24 +66,36 @@ const TeamSection = () => {
                             transition={{ duration: 0.6, delay: i * 0.1 }}
                             className="group h-full"
                         >
-                            <motion.div
-                                whileHover={{ y: -8, scale: 1.01 }}
-                                className="bg-accent/10 backdrop-blur-md border border-accent-foreground/10 rounded-3xl p-5 sm:p-8 lg:p-10 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 h-full flex flex-col"
-                            >
+                            <Link to={`/team#${member.slug}`} className="block h-full">
                                 <motion.div
-                                    className="gradient-orange w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-500 flex-shrink-0"
-                                    whileHover={{ rotate: 15 }}
+                                    whileHover={{ y: -10 }}
+                                    className="bg-card rounded-[2.5rem] p-8 border border-border shadow-lg hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 flex flex-col items-center text-center group relative overflow-hidden h-full"
                                 >
-                                    <member.icon className="w-8 h-8 text-primary-foreground" />
+                                    <div className="relative z-10 flex flex-col items-center h-full">
+                                        <motion.div
+                                            className="gradient-orange w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-500 flex-shrink-0"
+                                            whileHover={{ rotate: 15 }}
+                                        >
+                                            <User className="w-10 h-10 text-primary-foreground" />
+                                        </motion.div>
+
+                                        <h3 className="text-xl font-heading font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                                            {member.name}
+                                        </h3>
+
+                                        <div className="text-primary font-bold text-xs uppercase tracking-widest mb-6 px-3 py-1.5 bg-primary/5 rounded-lg border border-primary/10">
+                                            {member.role}
+                                        </div>
+
+                                        <div className="mt-auto flex items-center gap-2 text-muted-foreground text-sm font-bold uppercase tracking-tight group-hover:text-primary transition-colors">
+                                            View Profile <ArrowRight className="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" />
+                                        </div>
+                                    </div>
+
+                                    {/* Bottom accent glow */}
+                                    <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 </motion.div>
-                                <h3 className="text-2xl font-heading font-bold text-accent-foreground mb-1 group-hover:text-primary transition-colors">{member.name}</h3>
-                                <div className="text-primary font-bold text-sm mb-6 leading-tight uppercase tracking-widest">{member.role}</div>
-                                <div className="flex-1">
-                                    <p className="text-accent-foreground/60 text-lg leading-relaxed italic line-clamp-12">
-                                        "{member.desc}"
-                                    </p>
-                                </div>
-                            </motion.div>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>
@@ -96,3 +105,4 @@ const TeamSection = () => {
 };
 
 export default TeamSection;
+

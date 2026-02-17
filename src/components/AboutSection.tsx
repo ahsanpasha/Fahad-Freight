@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Target, Users, Shield } from "lucide-react";
+import { Target, Users, Shield, Award } from "lucide-react";
 import founderImage from "@/assets/founder.jpg";
 
 const AboutSection = () => {
@@ -40,11 +40,12 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-16">
               {[
                 { icon: Target, label: "Mission Focused" },
-                { icon: Users, label: "5000+ Clients" },
+                { icon: Users, label: "1000+ Clients" },
                 { icon: Shield, label: "Secure Logistics" },
+                { icon: Award, label: "45+ Years Experience" },
               ].map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -52,16 +53,20 @@ const AboutSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  whileHover={{ y: -5, backgroundColor: "hsl(var(--muted))" }}
-                  className="flex flex-col items-center text-center p-6 rounded-2xl bg-muted/30 border border-border/50 transition-all hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
+                  whileHover={{ y: -5 }}
+                  className="flex flex-col items-center text-center p-8 rounded-3xl bg-card border border-border shadow-lg transition-all hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 group relative overflow-hidden"
                 >
                   <motion.div
                     animate={{ y: [0, -5, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
+                    className="relative z-10"
                   >
-                    <item.icon className="w-8 h-8 text-primary mb-3" />
+                    <item.icon className="w-10 h-10 text-primary mb-3" />
                   </motion.div>
-                  <span className="text-sm font-bold text-foreground uppercase tracking-widest">{item.label}</span>
+                  <span className="text-sm font-bold text-foreground uppercase tracking-widest relative z-10">{item.label}</span>
+
+                  {/* Bottom accent glow */}
+                  <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </motion.div>
               ))}
             </div>
