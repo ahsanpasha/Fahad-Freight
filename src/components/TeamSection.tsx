@@ -11,17 +11,17 @@ const team = [
     },
     {
         name: "Muhammad Naveed",
-        role: "Dedicated Broker",
+        role: "General Manager",
         slug: "muhammad-naveed",
     },
     {
         name: "Muhammad Asif",
-        role: "Transport and Truck Manager",
+        role: "Operational Manager",
         slug: "muhammad-asif",
     },
     {
         name: "Fahad Mobeen",
-        role: "Accountant & Manager",
+        role: "Director",
         slug: "fahad-mobeen",
     },
 ];

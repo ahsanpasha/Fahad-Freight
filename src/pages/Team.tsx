@@ -17,7 +17,7 @@ const team = [
     },
     {
         name: "Muhammad Naveed",
-        role: "Dedicated Broker",
+        role: "General Manager",
         slug: "muhammad-naveed",
         desc: "M Naveed has been a dedicated broker at Fahad Freight Logistics for 20 years. His extensive experience and in-depth knowledge of the logistics industry have been essential in managing client transactions and ensuring smooth operations. Naveed’s expertise continues to be a cornerstone of our success.",
         icon: Briefcase,
@@ -25,7 +25,7 @@ const team = [
     },
     {
         name: "Muhammad Asif",
-        role: "Transport and Truck Manager",
+        role: "Operational Manager",
         slug: "muhammad-asif",
         desc: "With 15 years of logistics experience, Muhammad Asif excels as the Transport and Truck Manager at Fahad Freight Logistics. His expertise in fleet management ensures that all trucking operations run efficiently and on time. Asif’s leadership and attention to detail are crucial in upholding the high standards of reliability our clients expect.",
         icon: User,
@@ -33,12 +33,45 @@ const team = [
     },
     {
         name: "Fahad Mobeen",
-        role: "Accountant & Manager",
+        role: "Director",
         slug: "fahad-mobeen",
         desc: "M Fahad combines his expertise as an accountant with his role as a manager at Fahad Freight Logistics. With a keen eye for financial accuracy and strong leadership skills, he manages financial operations and oversees team performance, ensuring efficient and effective support for the company’s objectives.",
         icon: TrendingUp,
         delay: 0.3
     },
+    {
+        name: "Asad Ali",
+        role: "Lahore Team",
+        slug: "asad-ali",
+        desc: "",
+        icon: User,
+        delay: 0.4
+    },
+    {
+        name: "Umer Farooq",
+        role: "Lahore Team",
+        slug: "umer-farooq",
+        desc: "",
+        icon: User,
+        delay: 0.5
+    },
+    {
+        name: "Abkar",
+        role: "Karachi Team",
+        slug: "abkar-shamsher",
+        desc: "",
+        icon: User,
+        delay: 0.6
+    },
+    {
+        name: "Akbar Shamshar",
+        role: "Karachi Team",
+        slug: "akbar-shamshar",
+        desc: "",
+        icon: User,
+        delay: 0.7
+    },
+
 ];
 
 const Team = () => {

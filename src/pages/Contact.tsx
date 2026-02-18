@@ -341,7 +341,7 @@ const Contact = () => {
 
                                             <div>
                                                 <h3 className="text-3xl font-heading font-bold text-foreground mb-3">
-                                                    Our Office
+                                                    Lahore Office
                                                 </h3>
 
                                                 <div className="text-muted-foreground text-lg space-y-1">
@@ -390,6 +390,74 @@ const Contact = () => {
                                 <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             </motion.div>
                         </div>
+                        {/* Karachi Office */}
+                        <div className="flex justify-center mt-12">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="w-full bg-card border border-border/50 rounded-[2.5rem] overflow-hidden hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 group"
+                            >
+                                <div className="grid lg:grid-cols-2">
+                                    {/* Left: Info */}
+                                    <div className="p-10 flex flex-col items-center justify-center text-center relative overflow-hidden bg-gradient-to-br from-card to-secondary/5">
+                                        <div className="absolute top-0 left-0 w-32 h-32 bg-primary/5 rounded-full -ml-16 -mt-16 transition-all duration-500 group-hover:bg-primary/10 group-hover:scale-150" />
+
+                                        <div className="relative z-10 space-y-6">
+                                            <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto
+                      group-hover:bg-primary transition-all duration-500 shadow-lg group-hover:shadow-primary/30">
+                                                <MapPin className="w-10 h-10 text-primary group-hover:text-white transition-colors duration-500" />
+                                            </div>
+
+                                            <div>
+                                                <h3 className="text-3xl font-heading font-bold text-foreground mb-3">
+                                                    Karachi Office
+                                                </h3>
+
+                                                <div className="text-muted-foreground text-lg space-y-1">
+                                                    <p className="font-medium">Room No 5, First Floor,</p>
+                                                    <p className="font-medium">Dinar Chamber, West Wharf Road,</p>
+                                                    <p className="font-medium">Karachi</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Right: Map */}
+                                    <div className="h-[400px] lg:h-auto relative cursor-pointer">
+                                        <a
+                                            href="https://maps.google.com/?q=Dinar+Chamber+West+Wharf+Road+Karachi"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block h-full w-full relative group/map"
+                                        >
+                                            <iframe
+                                                src="https://www.google.com/maps?q=Dinar+Chamber+West+Wharf+Road+Karachi&output=embed"
+                                                width="100%"
+                                                height="100%"
+                                                style={{ border: 0 }}
+                                                loading="lazy"
+                                                title="Karachi Office Location"
+                                                className="pointer-events-none contrast-110 brightness-105 group-hover/map:brightness-100 transition-all duration-700 h-full"
+                                            />
+                                            <div className="absolute inset-0 bg-primary/0 group-hover/map:bg-primary/5 transition-colors duration-500 flex items-center justify-center">
+                                                <div className="bg-white/90 backdrop-blur-md px-6 py-3 rounded-xl shadow-xl flex items-center gap-2 transform translate-y-4 opacity-0 group-hover/map:translate-y-0 group-hover/map:opacity-100 transition-all duration-500">
+                                                    <span className="text-secondary font-bold text-sm uppercase tracking-wider">
+                                                        Open in Google Maps
+                                                    </span>
+                                                    <ArrowRight className="w-4 h-4 text-primary" />
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                {/* Bottom accent glow */}
+                                <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            </motion.div>
+                        </div>
+
                     </div>
                 </div>
             </section>
