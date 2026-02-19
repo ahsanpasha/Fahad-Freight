@@ -208,9 +208,9 @@ const Contact = () => {
         {
             icon: Phone,
             title: "Phone",
-            details: ["+92 301 8402257"],
+            details: ["+92 326 4551202"],
             action: "Call us",
-            link: "tel:+923018402257",
+            link: "tel:+923264551202",
         },
         {
             icon: Mail,

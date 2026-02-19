@@ -1,5 +1,6 @@
 import { Truck, Mail, Phone, MapPin } from "lucide-react";
 import logo from "../assets/logo.png";
+import truck from "../assets/truck.png"
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -36,26 +37,26 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="absolute bottom-6 animate-truck-drive">
 
-        {/* Truck */}
+          <img src={truck} style={{ width: "150px" }} alt="" />
+        </div>
+        {/* Truck
         <div className="absolute bottom-6 animate-truck-drive">
           <div className="flex items-end">
-            {/* Container */}
             <div className="w-20 h-10 gradient-orange rounded-t-md relative">
               <div className="absolute inset-1 border border-primary-foreground/30 rounded-sm" />
             </div>
-            {/* Cabin */}
             <div className="w-8 h-8 bg-secondary rounded-t-md border-2 border-primary relative -ml-[1px]">
               <div className="absolute top-1 right-1 w-3 h-3 bg-sky-accent/50 rounded-sm" />
             </div>
           </div>
-          {/* Wheels */}
           <div className="flex justify-between px-2 -mt-1">
             <div className="w-4 h-4 rounded-full bg-foreground border-2 border-muted" />
             <div className="w-4 h-4 rounded-full bg-foreground border-2 border-muted" />
             <div className="w-4 h-4 rounded-full bg-foreground border-2 border-muted" />
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Footer content */}
@@ -139,7 +140,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-accent-foreground/50 text-sm">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                +92 301 8402257
+                +92 326 4551202
               </li>
               <li className="flex items-center gap-3 text-accent-foreground/50 text-sm">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0" />

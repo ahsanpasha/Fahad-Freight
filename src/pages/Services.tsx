@@ -148,7 +148,7 @@ const Services = () => {
                         Contact us today for a customized solution tailored to your specific transportation needs.
                     </p>
                     <motion.a
-                        href="https://wa.me/923018402257"
+                        href="https://wa.me/923264551202"
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
