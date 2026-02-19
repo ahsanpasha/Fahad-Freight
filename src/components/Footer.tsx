@@ -60,7 +60,7 @@ const Footer = () => {
       </div>
 
       {/* Footer content */}
-      <div className="section-container py-16">
+      <div className="section-container py-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
@@ -154,6 +154,10 @@ const Footer = () => {
           <p className="text-accent-foreground/30 text-sm">
             © 2026 Fahad Freight Logistics. All rights reserved.
           </p>
+
+        </div>
+        <div className=" border-accent-foreground/10 mt-2 pt-2 flex items-center justify-center">
+          <p className="text-accent-foreground/30 text-sm">Project by Muhammad Saad Zafar</p>
         </div>
       </div>
     </footer>
