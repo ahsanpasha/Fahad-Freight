@@ -157,7 +157,7 @@ const Footer = () => {
 
         </div>
         <div className=" border-accent-foreground/10 mt-2 pt-2 flex items-center justify-center">
-          <p className="text-accent-foreground/30 text-sm">Project by Muhammad Saad Zafar</p>
+          <p className="text-accent-foreground/30 text-sm">Project of Muhammad Saad Zafar</p>
         </div>
       </div>
     </footer>
