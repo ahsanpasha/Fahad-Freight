@@ -9,7 +9,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-24 bg-background relative overflow-hidden" ref={ref}>
+    <section id="about" className="py-24 relative overflow-hidden" ref={ref}>
       {/* Accent shape */}
       <div className="absolute top-0 left-0 w-64 h-64 gradient-orange opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2" />
 

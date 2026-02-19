@@ -49,7 +49,7 @@ const TeamSection = () => {
         });
     };
     return (
-        <section id="team" className="py-24 gradient-navy relative overflow-hidden">
+        <section id="team" className="py-24 relative overflow-hidden">
             {/* Geometric pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div className="w-full h-full" style={{

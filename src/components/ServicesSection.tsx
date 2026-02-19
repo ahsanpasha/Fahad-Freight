@@ -26,7 +26,7 @@ const ServicesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="py-24 gradient-navy relative overflow-hidden" ref={ref}>
+    <section id="services" className="py-24 relative overflow-hidden" ref={ref}>
       <div className="section-container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

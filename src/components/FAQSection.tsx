@@ -32,7 +32,7 @@ const FAQSection = () => {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 bg-background relative overflow-hidden" ref={ref}>
+    <section id="faq" className="py-24 relative overflow-hidden" ref={ref}>
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] gradient-orange opacity-[0.03] blur-[120px] rounded-full pointer-events-none" />
 

@@ -9,7 +9,7 @@ const VisionSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="vision" className="py-24 gradient-navy relative overflow-hidden" ref={ref}>
+    <section id="vision" className="py-24 relative overflow-hidden" ref={ref}>
       <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image */}

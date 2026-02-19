@@ -32,7 +32,7 @@ const ProcessSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="process" className="py-24 bg-background relative overflow-hidden" ref={ref}>
+    <section id="process" className="py-24 relative overflow-hidden" ref={ref}>
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
